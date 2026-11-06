@@ -23,16 +23,15 @@ using ExerciciosConstrutores;
 
 
 //? EXERCICIO 3
-Veiculo velocidade1 = new Veiculo(201);
+// Veiculo velocidade1 = new Veiculo(201);
+// Veiculo velocidade2 = new Veiculo(-10);
+// Veiculo velocidade3 = new Veiculo(30);
 
+//? EXERCICIO 4
 
+Funcionario funcionario = new Funcionario("Luis Otavio", "Desenvolvedor", 5000.00m);
 
-
-Veiculo velocidade2 = new Veiculo(-10);
-
-
-
-
-Veiculo velocidade3 = new Veiculo(30);
-
-
+funcionario.ExibirInformacoes();
+funcionario.ConsultarSalario();
+funcionario.AumentarSalario(10m);
+funcionario.ConsultarSalario();

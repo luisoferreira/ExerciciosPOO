@@ -7,23 +7,39 @@ namespace ExerciciosConstrutores
 {
     public class Funcionario
     {
-        public string Nome { get; set; }
-        public double Salario { get; set; }
+           public decimal Salario { get; private set; }
+           public string Nome { get; set; }
+         public string Cargo { get; set; }
+        public Funcionario(string nome, string cargo, decimal salarioInicial)
+    {
+        Nome = nome;
+        Cargo = cargo;
+        Salario = salarioInicial;
+    }
 
-        public Funcionario(string nome, double salario)
+   
+    public void AumentarSalario(decimal percentual)
+    {
+        if (percentual > 0)
         {
-            Nome = nome;
-            Salario = salario;
+            Salario += Salario * (percentual / 100);
+            Console.WriteLine($"Aumento de {percentual}% aplicado com sucesso!");
         }
-
-        public void AumentarSalario(double percentual)
+        else
         {
-            Salario += Salario * percentual / 100;
-        }
-
-        public void ExibirInformacoes()
-        {
-            Console.WriteLine($"Nome: {Nome}, Salário: {Salario:C}");
+            Console.WriteLine("O percentual de aumento deve ser maior que zero.");
         }
     }
+
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Nome: {Nome}");
+        Console.WriteLine($"Cargo: {Cargo}");
+        Console.WriteLine($"Salário: R$ {Salario:F2}");
+    }
+    public void ConsultarSalario()
+    {
+        Console.WriteLine($"O salário atual do funcionário {Nome} é: R$ {Salario:F2}");
+    }
+}
 }
